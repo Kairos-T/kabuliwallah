@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#17130f" />
+    <meta name="description" content="A creative translation of Rabindranath Tagore's Kabuliwallah." />
+    <link rel="icon" href="data:," />
+    <title>Kabuliwallah SEPA/RATED</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="game-canvas" aria-label="3D game"></canvas>
+      <div id="time-wash" aria-hidden="true"></div>
+      <p id="performance-caption" class="hidden" aria-live="polite"></p>
+      <p id="inner-thought" class="hidden" aria-live="polite"></p>
+      <div id="impact-wash" aria-hidden="true"></div>
+      <div id="cinematic-bars" class="hidden" aria-hidden="true"><i></i><i></i></div>
+      <section id="title-screen" class="full-overlay">
+        <div class="title-mark" aria-hidden="true"><span></span></div>
+        <p class="eyebrow">A creative translation of <em>Kabuliwallah</em></p>
+        <h1 aria-label="Separated">
+          <svg viewBox="0 0 700 270" role="img" aria-hidden="true">
+            <defs>
+              <clipPath id="sepa-cut"><polygon points="0,0 700,0 700,87 0,153" /></clipPath>
+              <clipPath id="rated-cut"><polygon points="0,169 700,103 700,270 0,270" /></clipPath>
+            </defs>
+            <text class="title-sepa" x="365" y="142" text-anchor="middle" clip-path="url(#sepa-cut)">SEPA</text>
+            <text class="title-rated" x="325" y="232" text-anchor="middle" clip-path="url(#rated-cut)">RATED</text>
+            <line x1="18" y1="161" x2="682" y2="95" />
+          </svg>
+        </h1>
+        <button id="begin-button" type="button">Begin your journey</button>
+        <p class="controls-note">WASD to move · Arrow keys or mouse to look · E to interact · H to unfold the handprint</p>
+      </section>
+      <header id="chapter-hud" class="hidden">
+        <div class="chapter-rule"></div>
+        <div class="chapter-copy"><p id="chapter-kicker">PRELUDE |</p><h2 id="chapter-title">The Promise</h2></div>
+      </header>
+      <nav id="chapter-nav" class="hidden" aria-label="Chapters"></nav>
+      <div id="reticle" class="hidden" aria-hidden="true"><span></span></div>
+      <p id="objective" class="hidden" aria-live="polite"></p>
+      <button id="handprint-button" class="hidden" type="button" aria-label="Unfold the handprint"><svg class="handprint-icon" viewBox="0 0 40 48" aria-hidden="true"><ellipse cx="20" cy="31" rx="11" ry="13"/><ellipse cx="7" cy="20" rx="4" ry="8" transform="rotate(-35 7 20)"/><ellipse cx="13" cy="10" rx="3.5" ry="8" transform="rotate(-12 13 10)"/><ellipse cx="21" cy="8" rx="3.5" ry="8"/><ellipse cx="29" cy="11" rx="3.5" ry="8" transform="rotate(10 29 11)"/><ellipse cx="35" cy="17" rx="3.5" ry="7" transform="rotate(24 35 17)"/></svg><span class="handprint-label">Handprint</span><kbd>H</kbd></button>
+      <section id="interaction-prompt" class="hidden" aria-live="polite">
+        <span class="key">E</span><span id="interaction-text">Interact</span>
+      </section>
+      <section id="speech-bubble" class="hidden" aria-live="polite" aria-atomic="true">
+        <strong id="bubble-speaker"></strong>
+        <p id="bubble-line"></p>
+      </section>
+      <div id="street-murmurs" aria-live="polite" aria-atomic="false"></div>
+      <section id="dialogue" class="hidden" role="dialog" aria-modal="true" aria-labelledby="speaker-name">
+        <p id="dialogue-context"></p><h3 id="speaker-name"></h3><p id="dialogue-line"></p>
+        <div id="dialogue-choices"></div>
+      </section>
+      <section id="handprint-view" class="full-overlay hidden" role="dialog" aria-modal="true" aria-label="Parvati’s handprint">
+        <button id="close-handprint" type="button" aria-label="Fold the handprint">Fold</button>
+        <div class="paper">
+          <div class="hand" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+        </div>
+      </section>
+      <section id="chapter-card" class="full-overlay hidden" aria-live="assertive">
+        <p id="card-kicker"></p><h2 id="card-title"></h2><p id="card-copy"></p>
+        <button id="continue-button" type="button">Continue</button>
+      </section>
+      <section id="ending" class="full-overlay hidden">
+        <h2>THE END</h2>
+        <button id="restart-button" type="button">Begin again</button>
+      </section>
+      <div id="touch-controls" aria-hidden="true">
+        <div id="touch-stick"><div id="touch-knob"></div></div>
+        <button id="touch-interact" type="button">Interact</button>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
